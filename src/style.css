@@ -1,73 +1,59 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 html{
-background: url(https://assets.pokemon.com/static2/_ui/img/chrome/body_bg.png);
+background: url(https://assets.pokemon.com/static2/_ui/img/chrome/body_bg.png); height: auto;
 }
-    
-    
-header{
-text-align: center;
-display: grid;
-border: 1px solid #000000;
-box-sizing: border-box;
-box-shadow: 0px 4px 4px rgba(163, 44, 44, 0.25);
-}
-    
-    
-.body-divider{
-box-sizing: inherit;  
+
+.divisor{  
 height: 70px;
 background-color: #313131;
 }
-    
-    
+      
 body{
 font-family: 'Open Sans', sans-serif;
-text-align: center;
 background: url(http://wallpapercanyon.com/wp-content/uploads/2016/01/White-Wallpaper-19.jpg);
 border: 1px solid #000000;
-box-sizing: border-box;
-box-shadow: 0px 4px 4px rgba(163, 44, 44, 0.25);
 }
-    
+
+.contenedor{
+display: grid;
+grid-column-gap: 40px;
+grid-row-gap: 10px;
+padding: 50px;
+}
+
+footer{
+display: grid;
+grid-template-areas: "footer1; footer2";
+padding: 30px;
+}
+
+.center{
+text-align: center;
+}
+
+.hidden{
+display:block;
+ }
+ 
 .video {
 width: 100%;
 height: auto;
 }
 
-#contenedor{ 
-display: grid;
-grid-template-columns: auto auto auto auto;
-grid-column-gap: 40px;
-grid-row-gap: 10px;
-padding: 50px;
+.btn, .seleccion{
+background-color: rgba(27, 29, 27, 0.637); /* Green */
+border-radius: 12px;
+border: none;
+color: white;
+padding: 15px 32px;
 text-align: center;
+text-decoration: none;
+font-size: 16px;
+margin: 4px 2px;
+cursor: pointer;
+box-shadow: 0 10px 18px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
-   
-.footer-divider{
-box-sizing: inherit;  
-height: 70px;
-background-color: #313131;
-}
-        
-footer{
-display: grid;
-text-align: center;
-grid-column-gap: 50px;
-grid-template-columns: 1fr 1fr;
-grid-template-areas: "footer1; footer2";
-padding: 30px;
-}
-    
-/*  ELIMINANDO EL GRID TEMPLATE AREA IGUAL FUNCIONA PREGUNTA ESO */
-.global-footer-1{  
-grid-area: "footer1";
-display:inline-block;
-vertical-align:middle;
-}
-    
-.global-footer-2{
-grid-area: "footer2";
-}
-        
+
 /* FOOTER 2 -BOTONES */
 .fa {
 padding: 18px;
@@ -102,24 +88,37 @@ color: white;
 background: #c7033e;
 color: white;
 }
-    
-/* botones */
 
-#mostrarPokemones, #limpiar, .select, .tiposPokemon{
-  background-color: rgba(27, 29, 27, 0.637); /* Green */
-  border-radius: 12px;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  box-shadow: 0 10px 18px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+ /*Mobile First */
+ @media (min-width: 320px){
+  .contenedor{
+    grid-template-columns: auto;
+    }
+  .img{
+    width: 300px;
+    height: auto;
   }
-
-.hidden{
- display:block;
-}
-
+  .imagenLogo{width :200px; height:120px;}
+ }
+ 
+ @media (min-width: 768px) {
+  .contenedor{
+    grid-template-columns: auto auto;
+    }
+  footer{
+    grid-template-columns: 1fr 1fr;
+    }
+  .imagenLogo{width :400px; height:230px;}
+  .img{width: 600px}
+ }
+ 
+ @media (min-width: 1024px) {
+  .contenedor{
+    grid-template-columns: auto auto auto;
+    }
+  footer{
+    grid-template-columns: 1fr 1fr;
+    }
+  .imagenLogo{width :400px; height:230px;}
+  .img{width: 600px}
+ }

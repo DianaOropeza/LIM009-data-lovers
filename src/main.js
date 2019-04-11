@@ -1,70 +1,57 @@
 const totalPokemons = POKEMON.pokemon;
-const arrListaPokemones= pokemon.listaPokemons(totalPokemons);
-const contenedor=document.getElementById("contenedor");
-const mostrarPokemones=document.getElementById("mostrarPokemones");
-const pokemonesFiltrados = document.getElementById("tiposPokemon");
-const orden=document.getElementById("orden-pokemon");
-const limpiar=document.getElementById("limpiar");
-const promedio=document.getElementById("promedio");
-const video=document.getElementById("video");
-const imagen=document.getElementById("imagenPokemon");
+const arrListaPokemones = pokemon.listaPokemons(totalPokemons);
+const contenedorPokemones = document.getElementById('contenedor');
+const mostrarPokemones = document.getElementById('mostrarPokemones');
+const sltTiposPokemon = document.getElementById('tiposPokemon');
+const sltOrdenar = document.getElementById('ordenarPokemon');
+const btnlimpiar = document.getElementById('limpiar');
+const promedio = document.getElementById('promedio');
+const videoPokemon = document.getElementById('video');
+const imagenPokemon = document.getElementById('imagenPokemon');
 
-//Imprimir lista de pokemones
+// Imprimir lista de pokemones
 const listaDePokemones = (data) => {
-	let mostrar = '';
-	for (let i = 0; i < data.length; i++) {
-		
-    box = `
+  let mostrar = '';
+  for (let i = 0; i < data.length; i++) {
+    let caja = `
     <div>
 	<img  src="${ data[i].img}" />
 	<p> Nombre : ${ data[i].name}</p>
 	<p> Tipo : ${ data[i].type}</p>
-	<p> Altura: ${ data[i].height}</p>
-	<p> Peso: ${ data[i].weight}</p> 
-	<p> Caramelos: ${ data[i].candy_count}</p>
-	<p> Huevo: ${data[i].egg}</p>
+	<p> Caramelos: ${ data[i].candyCount}</p>
+	<p> Huevo: ${data[i].egg === 'Not in Eggs' ? 'no tiene' : data[i].egg}</p>
 	<p> Debilidades: ${data[i].weaknesses}</p>
-	<p> Evolución: ${data[i].next_evolution}</p>
+	<p> Evolución: ${data[i].nextEvolution === undefined ? 'No tiene' : data[i].nextEvolution[0].name}</p>
 	</div>
-`;
-	mostrar += box;
-	};
-	contenedor.innerHTML = mostrar;
-}
+`;		mostrar += caja;  
+  }contenedorPokemones.innerHTML = mostrar;
+};
 
-//Mostrar pokemones
-mostrarPokemones.addEventListener("click", function(){
-	listaDePokemones(arrListaPokemones)
-	imagen.style.display='none';
+// Mostrar pokemones
+mostrarPokemones.addEventListener('click', () => {
+  listaDePokemones(arrListaPokemones);
+  imagenPokemon.style.display = 'none';
 });
 
-//Mostrar los pokemones por orden A-Z Z-A
-orden.addEventListener("change",()=>{
-  const ordenando= pokemon.ordenPokemones(totalPokemons, orden.value);
-	listaDePokemones(ordenando);
-	imagen.style.display='none';
-} );
-
-//Filtrar pokemones por tipo
-pokemonesFiltrados.addEventListener("change", () => {
-	const filtrandoPokemones = pokemon.filtrarPokemones(totalPokemons, pokemonesFiltrados.value);
-	listaDePokemones(filtrandoPokemones);
-	const promedioPokemon=pokemon.computeStats(totalPokemons,filtrandoPokemones);
-	promedio.innerHTML="El promedio de pokemones por tipo "+ pokemonesFiltrados.value+" es: "+promedioPokemon+"%";
-	imagen.style.display='none';
+// Mostrar los pokemones por orden A-Z Z-A
+sltOrdenar.addEventListener('change', () => {
+  const ordenandoPokemons = pokemon.ordenPokemones(totalPokemons, sltOrdenar.value);
+  listaDePokemones(ordenandoPokemons);
+  imagenPokemon.style.display = 'none';
 });
 
-//limpiar la pantalla
-limpiar.addEventListener("click",()=>{
-	contenedor.innerHTML=" ";
-	video.style.display='none';
-	imagen.style.display='block';
-})
+// Filtrar pokemones por tipo
+sltTiposPokemon.addEventListener('change', () => {
+  const filtrandoPokemones = pokemon.filtrarPokemones(totalPokemons, sltTiposPokemon.value);
+  listaDePokemones(filtrandoPokemones);
+  const promedioPokemon = pokemon.computeStats(totalPokemons, filtrandoPokemones);
+  promedio.innerHTML = 'El promedio de pokemones por tipo ' + sltTiposPokemon.value + ' es: ' + promedioPokemon + '%';
+  imagenPokemon.style.display = 'none';
+});
 
-arr=[];
-for(let i=0;i<totalPokemons.length;i++){
-	arr.push(totalPokemons[i].next_evolution)
-}
-arr.forEach(element => {
-	console.log(element);
+//  limpiar la pantalla
+btnlimpiar.addEventListener('click', () => {
+  contenedorPokemones.innerHTML = ' ';
+  videoPokemon.style.display = 'none';
+  imagenPokemon.style.display = 'block';
 });

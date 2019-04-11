@@ -1,80 +1,86 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Data Lovers</title>
-    <link rel="stylesheet" href="style.css" />
-    <style>
-      @import url('https://fonts.googleapis.com/css?family=Open+Sans');
-    </style>
-  </head>
 
-  <header>
-    <div class="image">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Pok%C3%A9mon_GO_logo.svg/1280px-Pok%C3%A9mon_GO_logo.svg.png" width="400" height="230"></img>
+<head>
+  <meta charset="utf-8" />
+  <title>Data Lovers</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1">
+</head>
+<body>
+  <header class="center">
+    <div>
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Pok%C3%A9mon_GO_logo.svg/1280px-Pok%C3%A9mon_GO_logo.svg.png"
+        alt="logoPokemon" class="imagenLogo"/>
     </div>
-    <div class="Filters">
-        <button id="mostrarPokemones">Mostrar Pokemones</button>
-        <select class="select" id="orden-pokemon">
-            <option value="">Ordenar</option>
-            <option value="ordenaz" >A - Z</option>
-            <option value="ordenza" >Z - A</option>
-        </select>
-        <select class="tiposPokemon" id="tiposPokemon">
-            <option value="">Pokemones por tipo</option>
-            <option value="Grass">Hierba</option>
-            <option value="Poison">Veneno</option>
-            <option value="Fire">Fuego</option>
-            <option value="Ice">Hielo</option>
-            <option value="Flying">Volador</option>
-            <option value="Psychic">Psiquico</option>
-            <option value="Water">Agua</option>
-            <option value="Ground">Suelo</option>
-            <option value="Rock">Roca</option>
-            <option value="Electric">Electrico</option>
-            <option value="Bug">Insecto</option>
-            <option value="Normal">Normal</option>
-            <option value="Fighting">Peleador</option>
-            <option value="Ghost">Fantasma</option>
-            <option value="Dragon">Dragon</option>
-         </select>
-         <button id=limpiar>Limpiar</button>
+    <div>
+      <button id="mostrarPokemones" class="btn">Mostrar Pokemones</button>
+      <select id="ordenarPokemon" class="seleccion">
+        <option value="">Ordenar</option>
+        <option value="ordenaz">A - Z</option>
+        <option value="ordenza">Z - A</option>
+      </select>
+      <select id="tiposPokemon" class="seleccion">
+        <option value="">Pokemones por tipo</option>
+        <option value="Grass">Hierba</option>
+        <option value="Poison">Veneno</option>
+        <option value="Fire">Fuego</option>
+        <option value="Ice">Hielo</option>
+        <option value="Flying">Volador</option>
+        <option value="Psychic">Psiquico</option>
+        <option value="Water">Agua</option>
+        <option value="Ground">Suelo</option>
+        <option value="Rock">Roca</option>
+        <option value="Electric">Electrico</option>
+        <option value="Bug">Insecto</option>
+        <option value="Normal">Normal</option>
+        <option value="Fighting">Peleador</option>
+        <option value="Ghost">Fantasma</option>
+        <option value="Dragon">Dragon</option>
+      </select>
+      <button id="limpiar" class="btn">Limpiar</button>
       <p id="promedio"></p>
     </div>
+    <div class="divisor"></div>
   </header>
-    <div class="body-divider"></div>
-  <body>
-  <div class="hidden" id="video">
+  <main>
+    <div id="video" class="hidden">
       <video controls class="video">
-       <source src="video/pokemonvideo.mp4" type="video/mp4"/>
+        <source src="video/pokemonvideo.mp4" type="video/mp4" />
       </video>
-  </div>
-    <div><br/>
-        <div id="imagenPokemon" class="hidden">
-            <img src="img/pokemon.jpg" alt="Pokemones" width="600"></img>
-        </div>
-        <div id="contenedor">
-        </div>
     </div>
-    <script src="./data/pokemon/pokemon.js"></script> 
-    <script src="data.js"></script>
-    <script src="main.js"></script>
-  </body>  
-    <div class="footer-divider"></div>
-  <footer>
-        <div class="global-footer-1">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/The_Pok%C3%A9mon_Company_International_logo.svg/1280px-The_Pok%C3%A9mon_Company_International_logo.svg.png" width="280" height="55"></img>
-          <p>©2019 Niantic, Inc. ©2019 Pokémon. ©1995-2019 Nintendo / Creatures Inc. / GAME FREAK inc.</p>        
-        </div>
-        <div class="global-footer-2">
-          <p>Siguenos</p>
-           <div class="siguenos-box">
-              <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-              <a href="https://www.facebook.com/pokemon" class="fa fa-facebook"></a>
-              <a href="https://twitter.com/pokemon_es_esp" class="fa fa-twitter"></a>
-              <a href="https://www.youtube.com/user/PokemonOficialES" class="fa fa-youtube"></a>
-              <a href="https://www.instagram.com/pokemon/" class="fa fa-instagram"></a>
-           </div>
-        </div>
+    <div><br />
+      <div id="imagenPokemon" class="hidden center">
+        <img src="img/pokemon.jpg" alt="Pokemones" class="img" />
+      </div>
+      <div id="contenedor" class="contenedor center">
+      </div>
+    </div>
+    <div class="divisor"></div>
+  </main>
+  <footer class="center">
+    <div>
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/The_Pok%C3%A9mon_Company_International_logo.svg/1280px-The_Pok%C3%A9mon_Company_International_logo.svg.png"
+        alt="logoPokemon1" width="280" height="55" />
+      <p>©2019 Niantic, Inc. ©2019 Pokémon. ©1995-2019 Nintendo / Creatures Inc. / GAME FREAK inc.</p>
+    </div>
+    <div>
+      <p>Siguenos</p>
+      <div>
+        <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+        <a href="https://www.facebook.com/pokemon" class="fa fa-facebook"></a>
+        <a href="https://twitter.com/pokemon_es_esp" class="fa fa-twitter"></a>
+        <a href="https://www.youtube.com/user/PokemonOficialES" class="fa fa-youtube"></a>
+        <a href="https://www.instagram.com/pokemon/" class="fa fa-instagram"></a>
+      </div>
+    </div>
   </footer>
+  <script src="./data/pokemon/pokemon.js"></script>
+  <script src="data.js"></script>
+  <script src="main.js"></script>
+</body>
+
 </html>
