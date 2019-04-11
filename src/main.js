@@ -34,14 +34,14 @@ mostrarPokemones.addEventListener('click', () => {
 });
 
 // Mostrar los pokemones por orden A-Z Z-A
-sltOrdenar.addEventListener('click', () => {
+sltOrdenar.addEventListener('change', () => {
   const ordenandoPokemons = pokemon.ordenPokemones(totalPokemons, sltOrdenar.value);
   listaDePokemones(ordenandoPokemons);
   imagenPokemon.style.display = 'none';
 });
 
 // Filtrar pokemones por tipo
-sltTiposPokemon.addEventListener('click', () => {
+sltTiposPokemon.addEventListener('change', () => {
   const filtrandoPokemones = pokemon.filtrarPokemones(totalPokemons, sltTiposPokemon.value);
   listaDePokemones(filtrandoPokemones);
   const promedioPokemon = pokemon.porcentajePorTipo(totalPokemons, filtrandoPokemones);
