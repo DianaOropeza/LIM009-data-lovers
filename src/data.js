@@ -20,7 +20,7 @@ const filtrarPokemones = (data, tipo) => {
   arrayFiltrar = data.filter((elemento) => {
     for (let i = 0; i < elemento.type.length; i++) {
       if (elemento.type[i] === tipo) {
-        return 1;
+        return true;
       }
     }
   });
