@@ -95,14 +95,18 @@ Dedición de Terminado (Tercer Sprint)
 - Crear una función que muestre los resultados en html
 - Test
 
-##Diseño de la Interfaz de Usuario
+## Diseño de la Interfaz de Usuario
 
 ### Prototipo de Baja Fidelidad 
 
+![baja fidelidad](https://github.com/DianaOropeza/LIM009-data-lovers/blob/master/src/img/baja%20fidelidad.jpeg)
 
 ### Prototipo de Alta Fidelidad
 
+![alta fidelidad](https://github.com/DianaOropeza/LIM009-data-lovers/blob/master/src/img/alta%20fidelidad.png)
 
 Prototipo de Alta Fidelidad realizado en Figma para Desktop. Link en Zeplin: https://zpl.io/b64NOQK.
 
-## Problemas en los Test de Usabilidad
+## Test de Usabilidad
+
+![test](https://github.com/DianaOropeza/LIM009-data-lovers/blob/master/src/img/test.png)
