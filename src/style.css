@@ -23,7 +23,6 @@ padding: 50px;
 
 footer{
 display: grid;
-grid-template-areas: "footer1; footer2";
 padding: 30px;
 }
 
