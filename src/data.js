@@ -43,10 +43,10 @@ const ordenPokemones = (data, orden) => {
   } 
 };
 
-const computeStats = (data, tipo) => {
+const porcentajePorTipo = (data, tipo) => {
   let porcentaje = tipo.length / data.length;
   return porcentaje;
 };
 
-window.pokemon = { listaPokemons, filtrarPokemones, ordenPokemones, computeStats };
+window.pokemon = { listaPokemons, filtrarPokemones, ordenPokemones, porcentajePorTipo };
 

@@ -44,7 +44,7 @@ sltOrdenar.addEventListener('change', () => {
 sltTiposPokemon.addEventListener('change', () => {
   const filtrandoPokemones = pokemon.filtrarPokemones(totalPokemons, sltTiposPokemon.value);
   listaDePokemones(filtrandoPokemones);
-  const promedioPokemon = pokemon.computeStats(totalPokemons, filtrandoPokemones);
+  const promedioPokemon = pokemon.porcentajePorTipo(totalPokemons, filtrandoPokemones);
   promedio.innerHTML = 'El promedio de pokemones por tipo ' + sltTiposPokemon.value + ' es: ' + promedioPokemon + '%';
   imagenPokemon.style.display = 'none';
 });
